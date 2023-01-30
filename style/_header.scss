@@ -1,0 +1,111 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 100%;
+    height: 1200px;
+    background-color:#1E1E1E;
+
+    .header {
+        max-width: 1920px;
+        width: 100%;
+        height: 80px;
+        padding: 0 54px;
+        background-color: $color-bg-header;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+
+        .logo-link {
+            display: inline-block;
+            text-decoration: none;
+
+            .logo {
+                width: 150px;
+                height: 42px;
+                object-fit: contain;
+            }
+        }
+    }
+
+    .menu {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+
+        .menu-link {
+            display: inline-block;
+            text-decoration: none;
+            color:$col-white;
+            margin-right: 68px;
+            font-weight: 400;
+            font-size: 18px;
+            padding: 8px 18px 8px 18px;
+            border-radius: 8px;
+
+            &:focus{
+                background-color:$col-gradient;
+            }
+
+            // &::before {
+            //     content: "";
+            //     width: 2px;
+            //     height: 10px;
+            //     background-color: gray;
+            //     position: absolute;
+            //     top: 17px;
+            //     left: 97px;
+            //     transform: rotate(-45deg);
+            // }
+
+            // &::after {
+            //     content: "";
+            //     width: 2px;
+            //     height: 10px;
+            //     background-color: gray;
+            //     position: absolute;
+            //     top: 17px;
+            //     left: 104px;
+            //     transform: rotate(45deg);
+            // }
+        }
+    }
+}
+
+.parent-block-end {
+    display: flex;
+    align-items: center;
+
+    .block-end-inner {
+        width: 40px;
+        height: 40px;
+        background-color:$col-gradient-2;
+        color: $col-white;
+        border-radius: 50%;
+        margin-right: 20px;
+        @include flex-center();
+
+        .letter {
+            font-size: 18px;
+            font-weight: 400;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $col-white;
+        }
+    }
+
+    .block-end-inner-icon {
+        width: 25px;
+        height: 25px;
+
+        .icon-sun {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
